@@ -3,7 +3,10 @@ from setuptools import setup, find_packages
 setup(
     name="sci",
     version="1.0.0",
-    packages=find_packages(),
+    packages=find_packages(
+        include=("sci"),
+        exclude=("tests")
+    ),
     install_requires=[
         "websockets"
     ],
