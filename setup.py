@@ -4,7 +4,7 @@ setup(
     name="sci",
     version="1.0.0",
     packages=find_packages(
-        include=("sci"),
+        include=("sci*"),
         exclude=("tests")
     ),
     install_requires=[
