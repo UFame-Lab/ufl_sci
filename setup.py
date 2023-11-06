@@ -4,8 +4,8 @@ setup(
     name="sci",
     version="1.0.0",
     packages=find_packages(
-        include=("sci*"),
-        exclude=("tests")
+        include=("sci*", "sci/lib*"),
+        exclude=("sci/tests")
     ),
     install_requires=[
         "websockets"
