@@ -8,7 +8,7 @@ setup(
         include=("sci*",),
     ),
     install_requires=[
-        "websockets",
-        "redis",
+        "websockets==12.0",
+        "redis==5.0.1",
     ]
 )
