@@ -773,11 +773,11 @@ class SCI_BaseAppController(BasicActionHandlers):
                 # NOTE для отправки ответа, actionHandler должен вернуть
                 # положительный `ecsaddo`, с "data" -> "response_payload"
                 # который является экземпляром SCI_ResposnePayload
-                response_payload: SCI_ResposnePayload = (
-                    ecsaddo_actionHandler["data"].get("response_payload")
-                )
-                if not isinstance(response_payload, SCI_ResposnePayload):
-                    if isAwaitingResponse:
+                if isAwaitingResponse:
+                    response_payload: SCI_ResposnePayload = (
+                        ecsaddo_actionHandler["data"].get("response_payload")
+                    )
+                    if not isinstance(response_payload, SCI_ResposnePayload): 
                         response_payload: dict = (
                             create_response_payload({}, 500).response_payload
                         )
@@ -791,30 +791,34 @@ class SCI_BaseAppController(BasicActionHandlers):
                         )
                         if ecsaddo_sendResponse["status"] != "ok":
                             raise SendResponseError(ecsaddo_sendResponse)
-                    return create_ecsaddo(
-                        "error",
-                        "response_payload error",
-                        "To send `EventMessage` `'method': 'response'`, "
-                        "`ActionHandler` should return `ecsaddo`, in "
-                        "`'data' -> 'response_payload'` there should be an "
-                        "instance  `SCI_ResposnePayload`",
-                        wrong_value=ecsaddo_actionHandler
+                        return create_ecsaddo(
+                            "error",
+                            "response_payload error",
+                            "To send `EventMessage` `'method': 'response'`, "
+                            "`ActionHandler` should return `ecsaddo`, in "
+                            "`'data' -> 'response_payload'` there should be an "
+                            "instance  `SCI_ResposnePayload`",
+                            wrong_value=ecsaddo_actionHandler
+                        )
+                    # переводим пользовательский SCI_ResposnePayload в dict
+                    response_payload: dict = response_payload.response_payload
+                    # Отправка EventMessage
+                    ecsaddo_sendResponse: dict = (
+                        await sendResponse(
+                            EventMessage, 
+                            response_payload, 
+                            self.app_name, 
+                            self.sci_cli
+                        )
                     )
-                # переводим пользовательский SCI_ResposnePayload в dict
-                response_payload: dict = response_payload.response_payload
-                # Отправка EventMessage
-                ecsaddo_sendResponse: dict = (
-                    await sendResponse(
-                        EventMessage, 
-                        response_payload, 
-                        self.app_name, 
-                        self.sci_cli
-                    )
-                )
-                if ecsaddo_sendResponse["status"] != "ok":
-                    raise SendResponseError(ecsaddo_sendResponse)
-            # EventMessage "method": "response" 
-            # уже отправлен или ответ не требуется
+                    if ecsaddo_sendResponse["status"] != "ok":
+                        raise SendResponseError(ecsaddo_sendResponse)
+                    # EventMessage "method": "response" отправлен.
+                    return create_ecsaddo("ok")
+                else:
+                    # EventMessage "method": "response" не требуется.
+                    return create_ecsaddo("ok")
+            # bypass
             return create_ecsaddo("ok")
         except Exception as ex:
             trc = str(traceback.format_exception(ex))

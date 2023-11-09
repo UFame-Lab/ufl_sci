@@ -306,8 +306,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         ping_pong=False,
                     )
                 )
-                
-                if ecsaddo_send_message["status"] != "ok":
+                if ecsaddo_send_message["status"] != "ok":   
                     return ecsaddo_send_message
                 return create_ecsaddo("ok")
             elif handshake_lvl == "end":
