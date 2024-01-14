@@ -14,6 +14,7 @@ from sci.lib.patterns import create_ecsaddo, isecsaddo
 from sci.sci_base.sci_base import SCI
 from sci.network.utils import create_response_payload
 from sci.sci_cli.sci_cli import SCI_Response
+from sci.sci_settings import TEST_LOG_FILE_PATH
 
 
 ref_q = queue.Queue()
@@ -101,7 +102,7 @@ class SCI_node_test_SBGZmHdJwLnKJCEbhLaRTkEFHoxkTzxjEh(unittest.TestCase):
             "node_name": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_rq": "sci_rq_appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_aq": asyncio.Queue(),
-            "logfilePath": "/home/paul/Dev/ufame-lab/ufl_SCI_dev/SCI_0.1/sci/tests/test.log",
+            "logfilePath": TEST_LOG_FILE_PATH,
             "AppConf": [
                 (GenericTest_SCIApp, "generic_test_app", {}),
                 (NodeLifespanSystemSCIApp, "node_lifespan_system_app", {})
@@ -137,7 +138,7 @@ class SCI_node_test_SBGZmHdJwLnKJCEbhLaRTkEFHoxkTzxjEh(unittest.TestCase):
             "node_name": "jupiter_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_rq": "sci_rq_jupiter_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_aq": asyncio.Queue(),
-            "logfilePath": "/home/paul/Dev/ufame-lab/ufl_SCI_dev/SCI_0.1/sci/tests/test.log",
+            "logfilePath": TEST_LOG_FILE_PATH,
             "AppConf": [
                 (GenericTest_SCIApp, "generic_test_app", {}),
                 (NodeLifespanSystemSCIApp, "node_lifespan_system_app", context_jupiter)

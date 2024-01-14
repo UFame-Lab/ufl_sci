@@ -90,8 +90,8 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
     def get_settings(self, sci_mode: str) -> dict:
         if sci_mode == "standart":
             SCI_SETTINGS = {
-                "node_name": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
-                "node_rq": "sci_rq_appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
+                "node_name": "appolo_node",
+                "node_rq": "sci_rq_appolo_node",
                 "node_aq": asyncio.Queue(),
                 "logfilePath": TEST_LOG_FILE_PATH,
                 "AppConf": [
@@ -117,7 +117,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
             return SCI_SETTINGS
         elif sci_mode == "shadow":
             SCI_SETTINGS = {
-                "related_node_rq": "sci_rq_appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
+                "related_node_rq": "sci_rq_appolo_node",
                 "logfilePath": TEST_LOG_FILE_PATH,
                 "local_broker_connection_settings": {
                     "redis": {
@@ -244,7 +244,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq", 
                 },
                 "meta" : {
@@ -312,7 +312,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq", 
                 },
                 "meta" : {
@@ -375,10 +375,10 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 'data': {
                     'description': '', 
                     'response': {
-                        'sender': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app', 
+                        'sender': 'appolo_node:generic_test_app', 
                         'action': 'test-generic', 
                         'address_section': {
-                            'recipient': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:anonim', 
+                            'recipient': 'appolo_node:anonim', 
                             'interface': 'local-aq'
                         }, 
                         'meta': {
@@ -400,7 +400,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq", 
                 },
                 "meta" : {
@@ -464,10 +464,10 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 'data': {
                     'description': '', 
                     'response': {
-                        'sender': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app', 
+                        'sender': 'appolo_node:generic_test_app', 
                         'action': 'test-generic', 
                         'address_section': {
-                            'recipient': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:anonim', 
+                            'recipient': 'appolo_node:anonim', 
                             'interface': 'local-aq'
                         }, 
                         'meta': {
@@ -489,7 +489,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -559,7 +559,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "some_wrong_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "some_wrong_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -624,7 +624,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:wrong_app",
+                    "recipient": "appolo_node:wrong_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -695,7 +695,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "wrong-test-action",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -763,7 +763,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "wrong-test-action",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -845,7 +845,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -867,7 +867,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -966,7 +966,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -990,7 +990,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1104,7 +1104,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1128,7 +1128,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1243,7 +1243,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1265,7 +1265,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1368,7 +1368,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1462,7 +1462,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1553,10 +1553,10 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 'data': {
                     'description': '', 
                     'response': {
-                        'sender': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app', 
+                        'sender': 'appolo_node:generic_test_app', 
                         'action': 'test-generic', 
                         'address_section': {
-                            'recipient': 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:anonim', 
+                            'recipient': 'appolo_node:anonim', 
                             'interface': 'local-aq'
                         }, 
                         'meta': {
@@ -1582,7 +1582,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1606,7 +1606,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1701,7 +1701,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1777,7 +1777,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1855,7 +1855,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -1935,7 +1935,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -2012,7 +2012,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -2084,7 +2084,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -2157,7 +2157,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {
@@ -2231,7 +2231,7 @@ class SCI_node_test_UquLPGOqCjcBaxIkNpcUyeepkdmljixGINeWPicZl(unittest.TestCase)
                 "sender": "anonim",
                 "action": "test-generic",
                 "address_section": {
-                    "recipient": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ:generic_test_app",
+                    "recipient": "appolo_node:generic_test_app",
                     "interface": "local-aq",
                 },
                 "meta": {

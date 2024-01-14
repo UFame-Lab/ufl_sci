@@ -3,6 +3,7 @@ import asyncio
 
 from sci.sci_cli.validators import EventMessage_Validate
 from sci.lib.patterns import isecsaddo
+from sci.sci_settings import TEST_LOG_FILE_PATH
 
 
 class EventMessage_Validate_sci_node_only_local_mType_request(unittest.TestCase):
@@ -11,7 +12,7 @@ class EventMessage_Validate_sci_node_only_local_mType_request(unittest.TestCase)
         SCI_SETTINGS = {
             "node_name": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_aq": asyncio.Queue(),
-            "logfilePath": "/home/paul/Dev/ufame-lab/ufl_SCI_dev/SCI_0.1/sci/tests/test.log",
+            "logfilePath": TEST_LOG_FILE_PATH,
             "AppConf": [], # Намерено оставлено пустым
         }
         template_validation_data = {

@@ -128,8 +128,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         
         id:hsMEfuJkkXmcpPBqFX
             `SCI_SETTINGS -> "node_name"`
-            Значение ключа `"node_name"` должно иметь тип `str`, и быть длиной
-            `>=` 50 символов.
+            Значение ключа `"node_name"` должно иметь тип `str`.
         """
         key_check = "node_name"
         if (
@@ -138,7 +137,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         ):
             return True
         node_name: str = self.validation_data.get(key_check)
-        if not isinstance(node_name, str) or not len(node_name) >= 50:
+        if not isinstance(node_name, str):
             raise ValidationError(
                 [key_check],
                 "structure error",
@@ -163,8 +162,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         id:GJResZnOZMTHPjdqzVNg
             `SCI_SETTINGS -> "node_rq"`
             Значение ключа `"node_rq"` должно иметь тип `str`, начинаться с
-            префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не
-            включая SCI_NODE_RQ_PREFIX.
+            префикса `SCI_NODE_RQ_PREFIX`.
         """
         key_check = "node_rq"
         if (
@@ -175,8 +173,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         node_rq: str = self.validation_data.get(key_check)
         if (
             not isinstance(node_rq, str) or
-            not node_rq.startswith(SCI_NODE_RQ_PREFIX) or
-            not (len(node_rq) - len(SCI_NODE_RQ_PREFIX)) >= 50
+            not node_rq.startswith(SCI_NODE_RQ_PREFIX)
         ):
             raise ValidationError(
                 [key_check], "structure error",
@@ -665,8 +662,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         id:yrUGRIAtDcxIiwddFmAt
             `SCI_SETTINGS -> "related_node_rq"`
             Значение ключа `"related_node_rq"` должно иметь тип `str`, начинаться с
-            префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не
-            включая SCI_NODE_RQ_PREFIX.
+            префикса `SCI_NODE_RQ_PREFIX`.
         """
         key_check = "related_node_rq"
         if (
@@ -677,8 +673,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         related_node_rq: str = self.validation_data.get(key_check)
         if (
             not isinstance(related_node_rq, str) or
-            not related_node_rq.startswith(SCI_NODE_RQ_PREFIX) or
-            not (len(related_node_rq)) - len(SCI_NODE_RQ_PREFIX) >= 50
+            not related_node_rq.startswith(SCI_NODE_RQ_PREFIX)
         ):
             raise ValidationError(
                 [key_check], "structure error",

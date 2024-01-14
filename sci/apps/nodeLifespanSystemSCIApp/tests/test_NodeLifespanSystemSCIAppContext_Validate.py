@@ -8,6 +8,7 @@ from sci.apps.nodeLifespanSystemSCIApp.application import (
     NodeLifespanSystemSCIApp
 )
 from sci.lib.patterns import isecsaddo
+from sci.sci_settings import TEST_LOG_FILE_PATH
 
 
 class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
@@ -47,7 +48,7 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             "node_name": "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_rq": "sci_rq_appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
             "node_aq": asyncio.Queue(),
-            "logfilePath": "/home/paul/Dev/ufame-lab/ufl_SCI_dev/SCI_0.1/sci/tests/test.log",
+            "logfilePath": TEST_LOG_FILE_PATH,
             "AppConf": [
                 (NodeLifespanSystemSCIApp, "nodeLifespanSystemSCIApp", {})
             ],
