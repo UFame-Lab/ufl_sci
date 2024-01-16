@@ -405,18 +405,15 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         Проверяется:
         `context -> "auth_nodes_settings" -> "local_nodes" -> "key"`
         
-        В качестве имени ключа значений `"local_nodes"` используется слишком
+        В качестве имени ключа значений `"local_nodes"` используется
         короткая строка `hello`.
         
         Ожидаемый ответ:
         {
-            'status': 'error', 
-            'action': 'failed validation', 
+            'status': 'ok', 
+            'action': 'successfully validation', 
             'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'hello'], 'structure error', '`context -> "auth_nodes_settings" -> "local_nodes" -> "node_name"` Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50 символов.')
-                ]
+                'description': 'successfully validation'
             }
         }
         """
@@ -424,7 +421,7 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         auth_nodes_settings = {
             "local_nodes": {
                 "hello": {
-                    "node_rq": "sci_rq_appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ",
+                    "node_rq": "sci_rq_hello_xTUwoiqkabbyYVvhOtSuUBcVZzMKPZkOfoOhA",
                     "wsBridgeBroker": tuple(),
                 },
             },
@@ -436,14 +433,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             sci_mode=self.sci_mode
         ).start_validation()
         self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
         self.assertEqual(
-            "failed validation", 
-            ecsaddo_validate["action"], 
+            "successfully validation", 
+            ecsaddo_validate["action"],
             msg=msg
         )
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["data"]["description"], 
             msg=msg
         )
@@ -561,25 +558,22 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         `context -> "auth_nodes_settings" -> "local_nodes" -> "?node_name" -> 
         "node_rq"`
         
-        В качестве значения ключа `"node_rq"` передается слишком короткая строка.
+        В качестве значения ключа `"node_rq"` передается короткая строка.
         
         Ожидаемый ответ:
         {
-            'status': 'error', 
-            'action': 'failed validation', 
+            'status': 'ok', 
+            'action': 'successfully validation', 
             'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ', 'node_rq'], 'structure error', '`context -> "auth_nodes_settings" -> "local_nodes" -> "node_name" -> "node_rq"` Значение ключа `"node_rq"` должно иметь тип `str`, начинаться с префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не включая SCI_NODE_RQ_PREFIX.')
-                ]
+                'description': 'successfully validation'
             }
         }
         """
         msg = self.test_jkhRjGaXYFhYyoFHGPpnXBTMxlsrjHqvOLkoTi.__doc__
         auth_nodes_settings = {
             "local_nodes": {
-                "appolo_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZ": {
-                    "node_rq": "hello",
+                "hello": {
+                    "node_rq": "sci_rq_hello",
                     "wsBridgeBroker": tuple(),
                 },
             },
@@ -591,14 +585,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             sci_mode=self.sci_mode
         ).start_validation()
         self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["action"], 
             msg=msg
         )
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["data"]["description"], 
             msg=msg
         )
@@ -1092,18 +1086,15 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         Проверяется:
         `context -> "auth_nodes_settings" -> "remote_nodes" -> "key"`
         
-        В качестве имени ключа значений `"remote_nodes"` используется слишком
+        В качестве имени ключа значений `"remote_nodes"` используется
         короткая строка `hello`.
         
         Ожидаемый ответ:
         {
-            'status': 'error', 
-            'action': 'failed validation', 
+            'status': 'ok', 
+            'action': 'successfully validation', 
             'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'remote_nodes', 'hello'], 'structure error', '`context -> "auth_nodes_settings" -> "remote_nodes" -> "node_name"` Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50 символов.')
-                ]
+                'description': 'successfully validation'
             }
         }
         """
@@ -1132,14 +1123,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             sci_mode=self.sci_mode
         ).start_validation()
         self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["action"], 
             msg=msg
         )
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["data"]["description"], 
             msg=msg
         )
@@ -1275,17 +1266,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         `context -> "auth_nodes_settings" -> "remote_nodes" -> "?node_name" -> 
         "node_rq"`
         
-        В качестве значения ключа `"node_rq"` передается слишком короткая строка.
+        В качестве значения ключа `"node_rq"` передается короткая строка.
         
         Ожидаемый ответ:
         {
-            'status': 'error', 
-            'action': 'failed validation', 
+            'status': 'ok', 
+            'action': 'successfully validation', 
             'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'remote_nodes', 'alfa_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZgdiuhb', 'node_rq'], 'structure error', '`context -> "auth_nodes_settings" -> "local_nodes" -> "node_name" -> "node_rq"` Значение ключа `"node_rq"` должно иметь тип `str`, начинаться с префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не включая SCI_NODE_RQ_PREFIX.')
-                ]
+                'description': 'successfully validation'
             }
         }
         """
@@ -1293,7 +1281,7 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         auth_nodes_settings = {
             "remote_nodes": {
                 "alfa_node_aCtn4R2k3qPtziyBEM6EwjdDr7ulRz5WQHDbOZgdiuhb": {
-                    "node_rq": "hello",
+                    "node_rq": "sci_rq_hello",
                     "wsBridgeBroker": tuple(),
                     "broker_connection_settings": {
                         "redis": {
@@ -1314,14 +1302,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             sci_mode=self.sci_mode
         ).start_validation()
         self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["action"], 
             msg=msg
         )
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["data"]["description"], 
             msg=msg
         )
@@ -3030,18 +3018,15 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         Проверяется:
         `context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "key"`
         
-        В качестве имени ключа значений `"remote_ws_nodes"` используется слишком
+        В качестве имени ключа значений `"remote_ws_nodes"` используется
         короткая строка `hello`.
         
         Ожидаемый ответ:
         {
-            'status': 'error', 
-            'action': 'failed validation', 
+            'status': 'ok', 
+            'action': 'successfully validation', 
             'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'remote_ws_nodes', 'hello'], 'structure error', '`context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "node_name"` Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50 символов.')
-                ]
+                'description': 'successfully validation'
             }
         }
         """
@@ -3060,14 +3045,14 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
             sci_mode=self.sci_mode
         ).start_validation()
         self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["action"], 
             msg=msg
         )
         self.assertEqual(
-            "failed validation", 
+            "successfully validation", 
             ecsaddo_validate["data"]["description"], 
             msg=msg
         )
@@ -3174,56 +3159,56 @@ class NodeLifespanSystemSCIAppContect_Validate(unittest.TestCase):
         )
         
     
-    def test_LTGIvinfLeonVkPjygIBjybFZgiYzFLdTOccFxoBvpmW(self):
-        """
-        Основные условия:
-        - `"sci_mode" - "standart"`
+    # def test_LTGIvinfLeonVkPjygIBjybFZgiYzFLdTOccFxoBvpmW(self):
+    #     """
+    #     Основные условия:
+    #     - `"sci_mode" - "standart"`
         
-        Проверяется:
-        `context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "key" ->
-        "wsbridge"`
+    #     Проверяется:
+    #     `context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "key" ->
+    #     "wsbridge"`
         
-        В качестве значения ключа `"wsbridge"` передается не валидное имя
-        которого нет в `SCI_SETTINGS["websocket_connections"]`
+    #     В качестве значения ключа `"wsbridge"` передается не валидное имя
+    #     которого нет в `SCI_SETTINGS["websocket_connections"]`
         
-        Ожидаемый ответ:
-        {
-            'status': 'error', 
-            'action': 'failed validation', 
-            'data': {
-                'description': 'failed validation', 
-                'error_list': [
-                    (['auth_nodes_settings', 'remote_ws_nodes', 'hello'], 'structure error', '`context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "node_name"` Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50 символов.')
-                ]
-            }
-        }
-        """
-        msg = self.test_LTGIvinfLeonVkPjygIBjybFZgiYzFLdTOccFxoBvpmW.__doc__
-        auth_nodes_settings = {
-            "remote_ws_nodes": {
-                "hello": {
-                    "wsbridge": "wrong_someWsBridge",
-                }
-            },
-        }
-        self.context["auth_nodes_settings"] = auth_nodes_settings
-        ecsaddo_validate: dict = NodeLifespanSystemSCIAppContext_Validate(
-            validation_data=self.context,
-            SCI_SETTINGS=self.SCI_SETTINGS,
-            sci_mode=self.sci_mode
-        ).start_validation()
-        self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-        self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
-        self.assertEqual(
-            "failed validation", 
-            ecsaddo_validate["action"], 
-            msg=msg
-        )
-        self.assertEqual(
-            "failed validation", 
-            ecsaddo_validate["data"]["description"], 
-            msg=msg
-        )
+    #     Ожидаемый ответ:
+    #     {
+    #         'status': 'error', 
+    #         'action': 'failed validation', 
+    #         'data': {
+    #             'description': 'failed validation', 
+    #             'error_list': [
+    #                 (['auth_nodes_settings', 'remote_ws_nodes', 'hello'], 'structure error', '`context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "node_name"` Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50 символов.')
+    #             ]
+    #         }
+    #     }
+    #     """
+    #     msg = self.test_LTGIvinfLeonVkPjygIBjybFZgiYzFLdTOccFxoBvpmW.__doc__
+    #     auth_nodes_settings = {
+    #         "remote_ws_nodes": {
+    #             "hello": {
+    #                 "wsbridge": "wrong_someWsBridge",
+    #             }
+    #         },
+    #     }
+    #     self.context["auth_nodes_settings"] = auth_nodes_settings
+    #     ecsaddo_validate: dict = NodeLifespanSystemSCIAppContext_Validate(
+    #         validation_data=self.context,
+    #         SCI_SETTINGS=self.SCI_SETTINGS,
+    #         sci_mode=self.sci_mode
+    #     ).start_validation()
+    #     self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
+    #     self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
+    #     self.assertEqual(
+    #         "failed validation", 
+    #         ecsaddo_validate["action"], 
+    #         msg=msg
+    #     )
+    #     self.assertEqual(
+    #         "failed validation", 
+    #         ecsaddo_validate["data"]["description"], 
+    #         msg=msg
+    #     )
         
         
     def test_ewyivIzsXzZgTAGcqjtHlmRMQceMgJYgokEPsvkuOdEp(self):

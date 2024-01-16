@@ -109,8 +109,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
             
         id:UDEddJQhnPSqArxV
             `context -> "auth_nodes_settings" -> "local_nodes" -> "node_name"`
-            Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50
-            символов.
+            Ключ `"node_name"` должен иметь тип `str`.
             
         id:xNBGkytRhCMSiic
             `context -> "auth_nodes_settings" -> "remote_nodes: dict"`
@@ -118,8 +117,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
             
         id:LIaoOlnpAfLo
             `context -> "auth_nodes_settings" -> "remote_nodes" -> "node_name"`
-            Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50
-            символов.
+            Ключ `"node_name"` должен иметь тип `str`.
             
         id:zUHgjrJICvEekfRFZH
             `context -> "auth_nodes_settings" -> "remote_ws_nodes: dict"`
@@ -127,8 +125,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
             
         id:SFrePFbRKzfvcAQISk
             `context -> "auth_nodes_settings" -> "remote_ws_nodes" -> "node_name"`
-            Ключ `"node_name"` должен иметь тип `str`, и быть длиной `>=` 50
-            символов.
+            Ключ `"node_name"` должен иметь тип `str`.
         """
         key_check = "auth_nodes_settings"
         if (
@@ -172,7 +169,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
                     )
                 )
             for local_node in local_nodes:
-                if not isinstance(local_node, str) or not len(local_node) >= 50:
+                if not isinstance(local_node, str):
                     raise ValidationError(
                         [key_check, "local_nodes", local_node], 
                         "structure error",
@@ -209,7 +206,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
                     )
                 )
             for remote_node in remote_nodes:
-                if not isinstance(remote_node, str) or not len(remote_node) >= 50:
+                if not isinstance(remote_node, str):
                     raise ValidationError(
                         [key_check, "remote_nodes", remote_node], 
                         "structure error",
@@ -246,10 +243,7 @@ class NodeLifespanSystemSCIAppContext_Validate(BaseValidate):
                     )
                 )
             for remote_ws_node in remote_ws_nodes:
-                if (
-                    not isinstance(remote_ws_node, str) or 
-                    not len(remote_ws_node) >= 50
-                ):
+                if not isinstance(remote_ws_node, str):
                     raise ValidationError(
                         [key_check, "remote_ws_nodes", remote_ws_node], 
                         "structure error",
@@ -318,8 +312,7 @@ class LocalNodes_SubValidate(BaseValidate):
             `context -> "auth_nodes_settings" -> "local_nodes" -> "node_name" ->
             "node_rq"`
             Значение ключа `"node_rq"` должно иметь тип `str`, начинаться с
-            префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не
-            включая SCI_NODE_RQ_PREFIX.
+            префикса `SCI_NODE_RQ_PREFIX`.
         """
         key_check = "node_rq"
         if (
@@ -330,8 +323,7 @@ class LocalNodes_SubValidate(BaseValidate):
         node_rq: str = self.validation_data.get(key_check)
         if (
             not isinstance(node_rq, str) or 
-            not node_rq.startswith(SCI_NODE_RQ_PREFIX) or 
-            not (len(node_rq) - len(SCI_NODE_RQ_PREFIX)) >= 50
+            not node_rq.startswith(SCI_NODE_RQ_PREFIX)
         ):
             raise ValidationError(
                 [key_check], "structure error",
@@ -632,6 +624,14 @@ class RemoteWsNodes_SubValidate(BaseValidate):
                     self.wsbridge_check.__doc__, "dQnphMlhITbDhEMnPNqDn"
                 )
             )
+        # if wsbridge not in self.SCI_SETTINGS["websocket_connections"]:
+        #     raise ValidationError(
+        #         [key_check],
+        #         "structure error",
+        #         self.extract_alert(
+        #             self.wsbridge_check.__doc__, "RsIbkgJvMYOufsJfXRJzOhzob"
+        #         )
+        #     )
         
         
     def dependent_check(self, num: int, **kwargs):

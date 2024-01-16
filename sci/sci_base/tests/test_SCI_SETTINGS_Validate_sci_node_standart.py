@@ -176,46 +176,43 @@ class SCI_SETTINGS_Validate_sci_node_standart(unittest.TestCase):
         )
         
     
-    # def test_CTVvaYGYfBmndrcOONbIEzcKGNrBWeTZfbB(self):
-    #     """
-    #     Основные условия:
-    #     - `"sci_mode" - "standart"`
+    def test_CTVvaYGYfBmndrcOONbIEzcKGNrBWeTZfbB(self):
+        """
+        Основные условия:
+        - `"sci_mode" - "standart"`
         
-    #     Проверяется:
-    #     `SCI_SETTINGS -> "node_name"`
+        Проверяется:
+        `SCI_SETTINGS -> "node_name"`
         
-    #     В качестве значения ключа `"node_name"` передана строка `hello`
+        В качестве значения ключа `"node_name"` передана строка `hello`
         
-    #     Ожидаемый ответ:
-    #     {
-    #         'status': 'error', 
-    #         'action': 'failed validation', 
-    #         'data': {
-    #             'description': 'failed validation', 
-    #             'error_list': [
-    #                 (['node_name'], 'structure error', '`SCI_SETTINGS -> "node_name"` Значение ключа `"node_name"` должно иметь тип `str`, и быть длиной `>=` 50 символов.')
-    #             ]
-    #         }
-    #     }
-    #     """
-    #     msg = self.test_CTVvaYGYfBmndrcOONbIEzcKGNrBWeTZfbB.__doc__
-    #     self.SCI_SETTINGS["node_name"] = "hello"
-    #     ecsaddo_validate: dict = SCI_SETTINGS_Validate(
-    #         validation_data=self.SCI_SETTINGS,
-    #         sci_mode=self.sci_mode
-    #     ).start_validation()
-    #     self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-    #     self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
-    #     self.assertEqual(
-    #         "failed validation", 
-    #         ecsaddo_validate["action"], 
-    #         msg=msg
-    #     )
-    #     self.assertEqual(
-    #         "failed validation", 
-    #         ecsaddo_validate["data"]["description"], 
-    #         msg=msg
-    #     )
+        Ожидаемый ответ:
+        {
+            'status': 'ok', 
+            'action': 'successfully validation', 
+            'data': {
+                'description': 'successfully validation'
+            }
+        }
+        """
+        msg = self.test_CTVvaYGYfBmndrcOONbIEzcKGNrBWeTZfbB.__doc__
+        self.SCI_SETTINGS["node_name"] = "hello"
+        ecsaddo_validate: dict = SCI_SETTINGS_Validate(
+            validation_data=self.SCI_SETTINGS,
+            sci_mode=self.sci_mode
+        ).start_validation()
+        self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual(
+            "successfully validation", 
+            ecsaddo_validate["action"], 
+            msg=msg
+        )
+        self.assertEqual(
+            "successfully validation", 
+            ecsaddo_validate["data"]["description"], 
+            msg=msg
+        )
         
         
     def test_PSywIIoitkJXcaTEXddQAraPGbTYCGvCnGIZvdf(self):
@@ -341,46 +338,43 @@ class SCI_SETTINGS_Validate_sci_node_standart(unittest.TestCase):
         )
         
     
-    # def test_kJYRshEWdkMLzdWESlIwocHbCNdr(self):
-    #     """
-    #     Основные условия:
-    #     - `"sci_mode" - "standart"`
+    def test_kJYRshEWdkMLzdWESlIwocHbCNdr(self):
+        """
+        Основные условия:
+        - `"sci_mode" - "standart"`
         
-    #     Проверяется:
-    #     `SCI_SETTINGS -> "node_rq"`
+        Проверяется:
+        `SCI_SETTINGS -> "node_rq"`
         
-    #     В качестве значения ключа `"node_rq"` передается строка "hello"
+        В качестве значения ключа `"node_rq"` передается строка "sci_rq_hello"
         
-    #     Ожидаемый ответ:
-    #     {
-    #         'status': 'error', 
-    #         'action': 'failed validation', 
-    #         'data': {
-    #             'description': 'failed validation', 
-    #             'error_list': [
-    #                 (['node_rq'], 'structure error', '`SCI_SETTINGS -> "node_rq"` Значение ключа `"node_rq"` должно иметь тип `str`, начинаться с префикса `SCI_NODE_RQ_PREFIX`, и иметь длину `>=` 50 символам не включая SCI_NODE_RQ_PREFIX.')
-    #             ]
-    #         }
-    #     }
-    #     """
-    #     msg = self.test_kJYRshEWdkMLzdWESlIwocHbCNdr.__doc__
-    #     self.SCI_SETTINGS["node_rq"] = "hello"
-    #     ecsaddo_validate: dict = SCI_SETTINGS_Validate(
-    #         validation_data=self.SCI_SETTINGS,
-    #         sci_mode=self.sci_mode
-    #     ).start_validation()
-    #     self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
-    #     self.assertEqual("error", ecsaddo_validate["status"],msg=msg)
-    #     self.assertEqual(
-    #         "failed validation", 
-    #         ecsaddo_validate["action"], 
-    #         msg=msg
-    #     )
-    #     self.assertEqual(
-    #         "failed validation", 
-    #         ecsaddo_validate["data"]["description"], 
-    #         msg=msg
-    #     )
+        Ожидаемый ответ:
+        {
+            'status': 'ok', 
+            'action': 'successfully validation', 
+            'data': {
+                'description': 'successfully validation'
+            }
+        }
+        """
+        msg = self.test_kJYRshEWdkMLzdWESlIwocHbCNdr.__doc__
+        self.SCI_SETTINGS["node_rq"] = "sci_rq_hello"
+        ecsaddo_validate: dict = SCI_SETTINGS_Validate(
+            validation_data=self.SCI_SETTINGS,
+            sci_mode=self.sci_mode
+        ).start_validation()
+        self.assertEqual(True, isecsaddo(ecsaddo_validate), msg=msg)
+        self.assertEqual("ok", ecsaddo_validate["status"],msg=msg)
+        self.assertEqual(
+            "successfully validation", 
+            ecsaddo_validate["action"], 
+            msg=msg
+        )
+        self.assertEqual(
+            "successfully validation", 
+            ecsaddo_validate["data"]["description"], 
+            msg=msg
+        )
     
     
     def test_buzUDnEMShSZaxDUXwVngyjyGv(self):
