@@ -227,9 +227,7 @@ class SCI_SETTINGS_Validate(BaseValidate):
         
         id:WeJyXnYWQGJYUkngAR
             `SCI_SETTINGS -> "logfilePath"`
-            Значение ключа `"logfilePath"` должно иметь тип `str` и указывать
-            путь к существующему `log` файлу. `log` файл должен быть доступен
-            для записи.
+            Значение ключа `"logfilePath"` должно иметь тип `str`.
         """
         key_check = "logfilePath"
         if (
@@ -238,12 +236,13 @@ class SCI_SETTINGS_Validate(BaseValidate):
         ):
             return True
         logfilePath: str = self.validation_data.get(key_check)
-        if (
-            not isinstance(logfilePath, str) or
-            not os.path.isfile(logfilePath) or
-            os.path.isdir(logfilePath) or
-            not os.access(logfilePath, os.W_OK)
-        ):
+        # if (
+        #     not isinstance(logfilePath, str) or
+        #     not os.path.isfile(logfilePath) or
+        #     os.path.isdir(logfilePath) or
+        #     not os.access(logfilePath, os.W_OK)
+        # ):
+        if not isinstance(logfilePath, str):
             raise ValidationError(
                 [key_check], "structure error",
                 self.extract_alert(
