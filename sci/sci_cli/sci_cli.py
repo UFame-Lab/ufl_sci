@@ -18,7 +18,7 @@ from sci.lib.common_utils import (
 from sci.sci_typing import ecsaddo
 from sci.sci_exceptions import SCIRuntimeError, DestinationError
 from sci.lib.patterns import create_ecsaddo
-from sci.lib.logging import save_log
+from sci.lib.logging import save_log, asave_log
 from sci.app_controllers.base_controller import AUTH_SERVICE_ACTIONS
 from sci.sci_cli.validators import EventMessage_Validate
 
@@ -101,7 +101,7 @@ class SCI_cli:
                         f"{ecsaddo_for_logging}\n"
                         "--------------------\n"
                     )
-                save_log(
+                await asave_log(
                     self.sci_ref.logfilePath, 
                     ecsaddo_for_logging
                 )
@@ -125,7 +125,9 @@ class SCI_cli:
                     f"{data}\n"
                     "--------------------\n"
                 )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(
+                self.sci_ref.logfilePath, data
+            )
             # "status": "ex"
             return data
             
@@ -643,7 +645,7 @@ class SCI_cli:
                 location=True,
                 traceback=trc
             )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(self.sci_ref.logfilePath, data)
             return data
         
 
@@ -698,7 +700,7 @@ class SCI_cli:
                 location=True,
                 traceback=trc
             )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(self.sci_ref.logfilePath, data)
             return data
             
             

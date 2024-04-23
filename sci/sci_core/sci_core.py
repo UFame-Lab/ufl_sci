@@ -15,7 +15,7 @@ from sci.lib.common_utils import (
 )
 from sci.sci_settings import DEBUG
 from sci.lib.patterns import create_ecsaddo
-from sci.lib.logging import save_log
+from sci.lib.logging import save_log, asave_log
 from sci.lib.common_utils import json_safe, get_next_delay
 from sci.network.utils import (
     create_response_payload, sendResponse, search_wsBridgeBroker
@@ -177,7 +177,7 @@ class ResponseSession:
                         f"{ecsaddo}\n"
                         "--------------------\n"
                     )
-                save_log(self.sci_ref.logfilePath, ecsaddo)
+                await asave_log(self.sci_ref.logfilePath, ecsaddo)
         except Exception as ex:
             trc = str(traceback.format_exception(ex))
             data = create_ecsaddo(
@@ -197,7 +197,7 @@ class ResponseSession:
                     f"{data}\n"
                     "--------------------\n"
                 )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(self.sci_ref.logfilePath, data)
 
 
     async def session_handler__pl(
@@ -446,7 +446,7 @@ class PostManager:
                         f"{ecsaddo}\n"
                         "--------------------\n"
                     )
-                save_log(self.sci_core_ref.sci_ref.logfilePath, ecsaddo)
+                await asave_log(self.sci_core_ref.sci_ref.logfilePath, ecsaddo)
         except Exception as ex:
             trc = str(traceback.format_exception(ex))
             data = create_ecsaddo(
@@ -465,7 +465,7 @@ class PostManager:
                     f"{data}\n"
                     "--------------------\n"
                 )
-            save_log(self.sci_core_ref.sci_ref.logfilePath, data)
+            await asave_log(self.sci_core_ref.sci_ref.logfilePath, data)
             
             
     async def post_manager__pl(self):
@@ -1603,7 +1603,7 @@ class SCI_core(ResponseSession):
                         f"{data}\n"
                         "--------------------\n"
                     )
-                save_log(self.sci_ref.logfilePath, data)
+                await asave_log(self.sci_ref.logfilePath, data)
                 continue
                 
         
@@ -1716,7 +1716,7 @@ class SCI_core(ResponseSession):
                         f"{data}\n"
                         "--------------------\n"
                     )
-                save_log(self.sci_ref.logfilePath, data)
+                await asave_log(self.sci_ref.logfilePath, data)
                 delay_try_connection = get_next_delay(
                     delay_try_connection, 2, 256
                 )
@@ -1795,7 +1795,7 @@ class SCI_core(ResponseSession):
                         f"{data}\n"
                         "--------------------\n"
                     )
-                save_log(self.sci_ref.logfilePath, data)
+                await asave_log(self.sci_ref.logfilePath, data)
                 await asyncio.sleep(3)
     
 
@@ -1856,7 +1856,7 @@ class SCI_core(ResponseSession):
                     f"{data}\n"
                     "--------------------\n"
                 )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(self.sci_ref.logfilePath, data)
 
 
     def collecting_receiver_message_points(
@@ -2037,7 +2037,7 @@ class SCI_core(ResponseSession):
                     f"{data} \n"
                     "--------------------\n"
                 )
-            save_log(self.sci_ref.logfilePath, data)
+            await asave_log(self.sci_ref.logfilePath, data)
             
             
     def is_nodeChain_update(

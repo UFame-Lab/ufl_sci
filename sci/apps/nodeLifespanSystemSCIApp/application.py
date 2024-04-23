@@ -12,7 +12,7 @@ from sci.app_controllers.base_controller import SCI_BaseAppController
 from sci.lib.common_utils import generate_variable_name
 from sci.lib.patterns import create_ecsaddo
 from sci.network.utils import create_response_payload
-from sci.lib.logging import save_log
+from sci.lib.logging import save_log, asave_log
 from sci.sci_settings import DEBUG
 from sci.apps.nodeLifespanSystemSCIApp.validators import (
     NodeLifespanSystemSCIAppContext_Validate
@@ -589,7 +589,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         f"{data}"
                         "--------------------\n"
                     )
-                save_log(self.sci_cli.sci_ref.logfilePath, data)
+                await asave_log(self.sci_cli.sci_ref.logfilePath, data)
                 await asyncio.sleep(1)
                 continue
      
@@ -681,7 +681,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         f"{ecsaddo_send_auth__pl}"
                         "--------------------\n"
                     )
-                save_log(
+                await asave_log(
                     self.sci_cli.sci_ref.logfilePath, 
                     ecsaddo_send_auth__pl
                 )
@@ -743,7 +743,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                     f"{data}"
                     "--------------------\n"
                 )
-            save_log(self.sci_cli.sci_ref.logfilePath, data)
+            await asave_log(self.sci_cli.sci_ref.logfilePath, data)
     
         
     async def send_auth__pl(
@@ -1061,7 +1061,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         f"{data}"
                         "--------------------\n"
                     )
-                save_log(self.sci_cli.sci_ref.logfilePath, data)
+                await asave_log(self.sci_cli.sci_ref.logfilePath, data)
                 await asyncio.sleep(1)
                 continue
                 
@@ -1158,7 +1158,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         f"{ecsaddo_related_main_node_is_alive_check__pl}"
                         "--------------------\n"
                     )
-                save_log(
+                await asave_log(
                     self.sci_cli.sci_ref.logfilePath, 
                     ecsaddo_related_main_node_is_alive_check__pl
                 )
@@ -1194,7 +1194,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                     f"{data}"
                     "--------------------\n"
                 )
-            save_log(self.sci_cli.sci_ref.logfilePath, data)
+            await asave_log(self.sci_cli.sci_ref.logfilePath, data)
     
     
     async def related_main_node_is_alive_check__pl(
@@ -1466,7 +1466,7 @@ class NodeLifespanSystemSCIApp(SCI_BaseAppController):
                         f"{data}"
                         "--------------------\n"
                     )
-                save_log(self.sci_cli.sci_ref.logfilePath, data)
+                await asave_log(self.sci_cli.sci_ref.logfilePath, data)
                 await asyncio.sleep(1)
                 continue
             

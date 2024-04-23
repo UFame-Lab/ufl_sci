@@ -12,7 +12,7 @@ from sci.app_action_handlers.action_handlers import BasicActionHandlers
 from sci.sci_exceptions import SendResponseError, SCI_AppError
 from sci.sci_typing import ecsaddo
 from sci.lib.patterns import create_ecsaddo, isecsaddo
-from sci.lib.logging import save_log
+from sci.lib.logging import save_log, asave_log
 from sci.lib.common_utils import json_safe
 from sci.network.utils import create_response_payload, SCI_ResposnePayload, sendResponse
 
@@ -319,7 +319,7 @@ class SCI_BaseAppController(BasicActionHandlers):
                                 f"{ecsaddo_actionDispatcher}\n"
                                 "--------------------\n"
                             )
-                        save_log(
+                        await asave_log(
                             self.sci_cli.sci_ref.logfilePath, 
                             ecsaddo_actionDispatcher
                         )
@@ -342,7 +342,7 @@ class SCI_BaseAppController(BasicActionHandlers):
                             f"{data}\n"
                             "--------------------\n"
                         )
-                    save_log(self.sci_cli.sci_ref.logfilePath, data)
+                    await asave_log(self.sci_cli.sci_ref.logfilePath, data)
                     continue
         except Exception as ex:
             trc = str(traceback.format_exception(ex))
@@ -361,7 +361,7 @@ class SCI_BaseAppController(BasicActionHandlers):
                     f"{data} \n"
                     "--------------------\n"
                 )
-            save_log(self.sci_cli.sci_ref.logfilePath, data)
+            await asave_log(self.sci_cli.sci_ref.logfilePath, data)
 
 
     async def actionDispatcher(
@@ -586,7 +586,7 @@ class SCI_BaseAppController(BasicActionHandlers):
                         f"{ecsaddo_messageHandler__pl}\n"
                         "--------------------\n"
                     )
-                save_log(
+                await asave_log(
                     self.sci_cli.sci_ref.logfilePath, 
                     ecsaddo_messageHandler__pl
                 )
@@ -608,7 +608,7 @@ class SCI_BaseAppController(BasicActionHandlers):
                     f"{data}\n"
                     "--------------------\n"
                 )
-            save_log(self.sci_cli.sci_ref.logfilePath, data)
+            await asave_log(self.sci_cli.sci_ref.logfilePath, data)
 
 
     async def messageHandler__pl(

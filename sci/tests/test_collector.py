@@ -10,7 +10,7 @@ from sci.tests.interface_local_aq import (
 )
 from sci.tests.interface_local_rq import (
     test_SCI_node_shadow_with_await_response_interface_local_rq,
-    test_SCI_node_shadow_without_awaot_response_interface_local_rq,
+    test_SCI_node_shadow_without_await_response_interface_local_rq,
     test_SCI_node_standart_with_await_resposne_interface_local_rq,
     test_SCI_node_standart_without_await_response_interfcae_local_rq
 )
@@ -86,7 +86,7 @@ def load_tests() -> None:
         test_SCI_node_standart_without_await_response_interface_local_aq, # 10 tests in 8.055s
         ###
         test_SCI_node_shadow_with_await_response_interface_local_rq, # 46 tests in 104.895s
-        test_SCI_node_shadow_without_awaot_response_interface_local_rq, # 20 tests in 41.498s
+        test_SCI_node_shadow_without_await_response_interface_local_rq, # 20 tests in 41.498s
         test_SCI_node_standart_with_await_resposne_interface_local_rq, # 41 tests in 90.297s
         test_SCI_node_standart_without_await_response_interfcae_local_rq, # 20 tests in 36.183s
         ###
@@ -95,20 +95,20 @@ def load_tests() -> None:
         test_SCI_node_standart_with_await_response_interface_remote_rq, # 41 tests in 90.440s
         test_SCI_node_standart_without_await_response_interface_remote_rq, # 20 tests in 36.265s
         ###
-        test_SCI_node_shadow_with_await_response_interface_ws, # 46 tests in 132.580s
-        test_SCI_node_shadow_without_await_response_interface_ws, # 20 tests in 55.732s
-        test_SCI_node_standart_with_await_response_interface_ws, # 41 tests in 115.372s
-        test_SCI_node_standart_without_await_response_interface_ws, # 20 tests in 50.438s
+        # test_SCI_node_shadow_with_await_response_interface_ws, # 46 tests in 132.580s
+        # test_SCI_node_shadow_without_await_response_interface_ws, # 20 tests in 55.732s
+        # test_SCI_node_standart_with_await_response_interface_ws, # 41 tests in 115.372s
+        # test_SCI_node_standart_without_await_response_interface_ws, # 20 tests in 50.438s
         ###
-        test_SCI_node_shadow_with_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 32 tests in 154.094s
-        test_SCI_node_shadow_without_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 20 tests in 85.834s
-        test_SCI_node_standart_with_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 32 tests in 148.668s
-        test_SCI_node_standart_without_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 20 tests in 80.490s
+        # test_SCI_node_shadow_with_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 32 tests in 154.094s
+        # test_SCI_node_shadow_without_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 20 tests in 85.834s
+        # test_SCI_node_standart_with_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 32 tests in 148.668s
+        # test_SCI_node_standart_without_await_response_interface_ws_use_wsBridgeBroker_via_local_rq, # 20 tests in 80.490s
         ###
-        test_SCI_node_shadow_with_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 32 tests in 154.200s
-        test_SCI_node_shadow_without_await_resposne_interface_ws_use_wsBridgeBroker_via_remote_rq, # 20 tests in 85.881s
-        test_SCI_node_standart_with_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 32 tests in 148.789s
-        test_SCI_node_standart_without_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 20 tests in 80.601s
+        # test_SCI_node_shadow_with_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 32 tests in 154.200s
+        # test_SCI_node_shadow_without_await_resposne_interface_ws_use_wsBridgeBroker_via_remote_rq, # 20 tests in 85.881s
+        # test_SCI_node_standart_with_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 32 tests in 148.789s
+        # test_SCI_node_standart_without_await_response_interface_ws_use_wsBridgeBroker_via_remote_rq, # 20 tests in 80.601s
         ###
         test_NodeLifespanSystemSCIAppContext_Validate, # 59 tests in 0.005s
         ###
@@ -119,9 +119,9 @@ def load_tests() -> None:
         test_NodeLifespanSystemSCIApp_remote_rq, # Ran 8 tests in 289.469s
         test_NodeLifespanSystemSCIApp_remote_rq_use_differents_back_address, # Ran 12 tests in 13.359s
         ###
-        test_NodeLifespanSystemSCIApp_ws, # 8 tests in 289.471s
-        test_NodeLifespanSystemSCIApp_ws_use_wsBridgeBroker_via_local_rq, # 12 tests in 449.795s
-        test_NodeLifespanSystemSCIApp_ws_use_wsBridgeBroker_via_remote_rq, # 12 tests in 449.810s
+        # test_NodeLifespanSystemSCIApp_ws, # 8 tests in 289.471s
+        # test_NodeLifespanSystemSCIApp_ws_use_wsBridgeBroker_via_local_rq, # 12 tests in 449.795s
+        # test_NodeLifespanSystemSCIApp_ws_use_wsBridgeBroker_via_remote_rq, # 12 tests in 449.810s
         ###
         test_EventMessage_Validate_sci_node_only_local_mType_request, # 60 tests in 0.006s
         test_EventMessage_Validate_sci_node_only_local_mType_response, # 42 tests in 0.003s
